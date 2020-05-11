@@ -1,0 +1,21 @@
+<!--先静后动，先样式再数据-->
+<view class="container">
+  <image class="head-image" src="{{postData.thumbnail_pic_s02}}"></image>
+  <view class="author-date">
+    <image class="avatar" src="{{postData.thumbnail_pic_s}}"></image>
+    <text class="author">{{postData.author}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{postData.date}}</text>
+  </view>
+  <text class="title">{{postData.title}}</text>
+  <view class="tool">
+    <view class="circle-img">
+      <image wx:if="{{collected}}" catchtap="onColletionTap" src="/images/icon/collection.png"></image>
+      <image wx:else catchtap="onColletionTap" src="/images/icon/collection-anti.png"></image>
+      <image catchtap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
+    </view>
+    <view class="horizon"></view>
+  </view>
+  <text class="detail" bindtap="tolink" data-link="{{postData.url}}">{{postData.title}}</text>
+  <button class="title" bindtap="tolink" data-link="{{postData.url}}">查看详情</button>
+</view>

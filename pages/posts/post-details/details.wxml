@@ -1,0 +1,3 @@
+<view>
+  <web-view src="{{newurl}}"></web-view>
+</view>

@@ -1,0 +1,16 @@
+<view class="today-h">
+  <view class="today-hone" catchtap="onstarTap" data-eventid="{{item._id}}" wx:for="{{eventdata}}" wx:key="_id" wx:for-item="item" wx:for-index="idx">
+      <view class="one-left">
+        <image src="{{item.pic}}"></image>
+      </view>
+      <view class="one-right">
+        <view class="title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="date">
+          <text>{{item.year}}年</text>
+          <text>{{item.lunar}}</text>
+        </view>
+      </view>
+  </view>
+</view>

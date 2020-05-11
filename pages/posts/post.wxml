@@ -1,0 +1,26 @@
+<import src="post-item/post-item-template.wxml" />
+<view>
+    <view class="fen">
+      <view class="one {{xuan==0?'active':''}}" catchtap="getnewListData" data-val="0">头条</view>
+      <view class="one {{xuan==1?'active':''}}" catchtap="getnewListData" data-val="1">娱乐</view>
+      <view class="one {{xuan==2?'active':''}}" catchtap="getnewListData" data-val="2">体育</view>
+      <view class="one {{xuan==3?'active':''}}" catchtap="getnewListData" data-val="3">时尚</view>
+      <view class="one {{xuan==4?'active':''}}" catchtap="getnewListData" data-val="4">科技</view>
+    </view>
+    <swiper class="onepost" vertical="{{false}}" indicator-dots="true"  autoplay="true" circular="true" interval="5000">
+        <swiper-item wx:for="{{lunlist}}" wx:key="xxx" wx:for-item="item" wx:for-index="idx">
+            <block>
+                <view catchtap="onPostTap" data-newid="{{item.uniquekey}}">
+                    <image src="{{item.thumbnail_pic_s}}"></image>   
+                    <text class="title">{{item.title}}</text>
+                </view>
+             </block>
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{newList}}" wx:key="xxx" wx:for-item="item" wx:for-index="idx">
+        <!--//template-->
+        <view catchtap="onPostTap" data-newid="{{item.uniquekey}}">
+             <template is="postItem" data="{{...item}}"/>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,20 @@
+<view class="container">
+  <image class="head-img" src="{{details.pic}}" mode="aspectFill" />
+  <view class="head-img-hover">
+    <text class="main-title">{{details.title}}</text>
+    <text class="sub-title">{{details.year + " ----- "+details.lunar}}年</text>
+  </view>
+  <image class="movie-img" src="{{details.pic}}"/>
+  <view class="hr"></view>
+  <view class="like">
+    <text class="plain-font">
+      {{details.des}}
+    </text>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis-font">故事简介</text>
+    <text class="summary-content">{{details.content}}</text>
+  </view>
+  <view class="hr"></view>
+</view>

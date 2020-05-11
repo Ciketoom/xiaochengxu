@@ -1,0 +1,60 @@
+<view class="page">
+  <!-- top部分 -->
+  <view class="top">
+    <input placeholder="输入城市名进行搜索" bindinput="bindKeyInput"></input>
+    <view class="icon">
+      <icon type="search" size="25" bindtap="search" />
+    </view>
+  </view>
+  <!-- body部分 -->
+  <view class="body">
+    <view class="city">
+      <text>{{defaultcity}}</text>
+    </view>
+    <view class="today">
+      <view>
+        <text>{{date}}</text>
+      </view>
+      <view>
+        <text>实时温度：{{temps}}度</text>
+      </view>
+      <view>
+        <text>空气指数：{{kong}}</text>
+      </view> 
+    </view>
+  </view>
+  <!-- bottom部分 -->
+  <view class="bottom">
+    <view class="center">
+      <view class="temp">
+          <text>{{temp}}</text>
+      </view>
+    </view>
+    <view class="weather">
+      <text>{{weather}}</text>
+    </view>
+    <view class="right">
+      <view class="wind">
+        <text>{{wind}}</text>
+        <text>{{windl}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 未来五天天气 -->
+  <view class="move">
+    <view class="one" wx:for="{{fivedate}}" wx:key="xxx" wx:for-item="item" wx:for-index="idx">
+      <view class="one-weather">
+        <text>{{item.weather}}</text>
+      </view>
+      <view class="one-date">
+        <text>{{item.date}}</text>
+      </view>
+      <view class="one-temperature">
+        <text>{{item.temperature}}</text>
+      </view>
+      <view class="one-wind">
+        <text>{{item.direct}}</text>
+      </view>
+    </view>
+  </view>
+</view>
